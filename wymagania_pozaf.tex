@@ -1,0 +1,115 @@
+\section{Wymagania pozafunkcjonalne}
+
+\subsection{Technologie}
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_1 \\ \hline
+Nazwa: & Wykorzystanie systemu przetwarzania danych w pamięci \\ \hline
+Priorytet: & Wysoki \\ \hline
+Opis: & W celu uzyskania wysokiej dostępności systemu oraz minimalizacji opóźnień przyjmuje się, że SWPFK będzie wykorzystywał system przetwarzania danych w pamięci (In-Memory Computing). Jednym z rekomendowanych rozwiązań jest oprogramowanie Gigaspace XAP. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_2 \\ \hline
+Nazwa: & Technologia wykonania modułu serwerowego \\ \hline
+Priorytet: & Średni \\ \hline
+Opis: & Moduł serwerowy SWPFK powinien zostać wykonany w technologii Java w co najmniej 1.6, w celu zapewnienia wysokiej skalowalności aplikacji. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_3 \\ \hline
+Nazwa: & Technologia wykonania interfejsu internetowego \\ \hline
+Priorytet: & Średni \\ \hline
+Opis: & Interfejs internetowy powinien zostać wykonany w technologii HTML oraz Java, ze względu na doświadczenie posiadane przez dział informatyczny Firmy Kurierskiej w budowie oprogramowania w tych technologiach. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_4 \\ \hline
+Nazwa: & Technologia wykonania aplikacji klienckiej \\ \hline
+Priorytet: & Średni \\ \hline
+Opis: & Aplikacja kliencka zostanie wykonana w technologii Microsoft .NET Framework w wersji co najmniej 3.5. Technologia ta zapewni pracę aplikacji na komputerach PC pracujących pod kontrolą systemu operacyjnego Microsoft Windows oraz szerokie możliwości budowania graficznego interfejsu użytkownika. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Wydajność}
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_5 \\ \hline
+Nazwa: & Wydajność usług modułu serwerowego \\ \hline
+Priorytet: & Wysoki \\ \hline
+Opis: & Czas wykonywania dowolnej usług w module serwerowym nie może być większy niż 300 milisekund. Czas ten jest mierzony od czasu wejścia zapytania do serwera do czasu wysłania odpowiedzi do klienta. Czasy wspomnianych akcji będą odczytywane z logów modułu serwerowego. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_6 \\ \hline
+Nazwa: & Wydajność aplikacji klienckiej \\ \hline
+Priorytet: & Średni \\ \hline
+Opis: & Czas przejścia pomiędzy dowolnymi dwoma ekranami interfejsu aplikacji klienckiej nie może być dłuższy niż 200 milisekund. Czas jest mierzony od wywołania akcji przejścia do załadowania całości wołanego okna. Z pomiaru jest wyłączony ewentualny czas oczekiwania na odebranie odpowiedzi z usługi modułu serwerowego. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_7 \\ \hline
+Nazwa: & Czas uruchamiania aplikacji klienckiej \\ \hline
+Priorytet: & Niski \\ \hline
+Opis: & Sumaryczny czas uruchamiania aplikacji klienckiej nie może być dłuższy niż 30 sekund. Czas ten jest mierzony od wywołania uruchomienia aplikacji do pojawienia się pełnego okna głównego aplikacji, które umożliwi użytkownikowi wykonanie dowolnej akcji. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Niezawodność}
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_8 \\ \hline
+Nazwa: & Niezawodność modułu serwerowego \\ \hline
+Priorytet: & Wysoki \\ \hline
+Opis: & Moduł serwerowy musi charakteryzować się pełną dostępnością na poziomie 99.995\% czasu w skali miesiąca. Niedostępność modułu serwerowego definiuje się jako brak lub wygenerowanie błędnej odpowiedzi na żądania innych aplikacji i interfejsów SWPFK. Przy czym w tym przypadku do błędnej odpowiedzi nie zalicza się błędów powstałych na skutek niepoprawnej implementacji procesu biznesowego.  \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Wykorzystanie zasobów}
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_9 \\ \hline
+Nazwa: & Wykorzystanie pamięci RAM przez aplikację kliencką. \\ \hline
+Priorytet: & Wysoki \\ \hline
+Opis: & Całkowite wykorzystanie pamięci RAM w dowolnym momencie działania aplikacji klienckiej nie może przekroczyć 768 megabajtów. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & WPF\_10 \\ \hline
+Nazwa: & Wykorzystanie pamięci RAM podczas używania interfejsu internetowego. \\ \hline
+Priorytet: & Średni \\ \hline
+Opis: & Całkowite wykorzystanie pamięci RAM w dowolnym momencie korzystania z interfejsu internetowego SWPFK przez przeglądarkę internetową nie może przekroczyć 150 megabajtów. Ilość pamięci RAM jest mierzona tylko dla zakładki przeglądarki w której otwarty jest interfejs SWPFK. \\
+\hline
+\end{tabular}
+\end{center}

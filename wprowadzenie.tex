@@ -1,0 +1,125 @@
+\section{Wprowadzenie}
+
+\subsection{Cel dokumentu}
+Dokument ten zawiera specyfikację wymagań Systemu Wspomagającego Pracę Firmy Kurierskiej. Został on opracowany na podstawie dokumentu wizji oraz informacji pozyskanych od kierownictwa firmy na temat specyfikowanego systemu.
+
+Uprawnionymi do wglądu w ten dokument są pracownicy Firmy Kurierskiej zaangażowani w powstawanie Systemu Wspomagającego Pracę Firmy Kurierskiej. 
+
+\subsection{Przyjęte zasady w dokumencie}
+\subsubsection*{Śledzenie zmian w dokumencie}
+Historia zmian dokumentu znajduje się na drugiej stronie dokumentu i jest zrealizowana w formie tabeli. Wpis dotyczący ostatniej zmiany w dokumencie powinien być umieszczony w pierwszym wierszu tabeli i musi zawierać datę zmiany, dane autora zmiany, skrótowy komentarz odnośnie przyczyny zmiany oraz numer kolejnej wersji dokumentu. Numer kolejnej wersji dokumentu jest wyznaczany przez zwiększenie o jeden numeru wersji po kropce (np. 1.01 $\rightarrow$ 1.02) lub w przypadku znaczącej zmiany treści przez zwiększenie o jeden liczby przed kropką i wyzerowanie liczby po kropce (np. 1.05 $\rightarrow$ 2.00).
+
+\subsubsection*{Definiowanie wymagań pozafunkcjonalnych}
+Wszystkie wymagania z wyjątkiem wymagań funkcjonalnych będą definiowane za pomocą poniższej tabeli.
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & Unikalny identyfikator wymagania \\ \hline
+Nazwa: & Nazwa wymagania \\ \hline
+Priorytet: & Niski / Średni / Wysoki \\ \hline
+Opis: & Dokładny opis definiowanego wymagania. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Definiowanie aktorów}
+Aktorzy będą definiowani za pomocą poniższej tabeli.
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & Unikalny identyfikator aktora z prefiksem ''AKT\_'' \\ \hline
+Nazwa: & Nazwa aktora \\ \hline
+Opis: & Opis aktora \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Definiowanie obiektów biznesowych}
+Obiekty biznesowe będą definiowane za pomocą poniższej tabeli.
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & Unikalny identyfikator obiektu biznesowego z prefiksem ''OBB\_'' \\ \hline
+Nazwa: & Nazwa obiektu biznesowego \\ \hline
+Opis: & Opis obiektu biznesowego \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Definiowanie procesów biznesowych oraz scenariuszy przypadków użycia}
+Procesy biznesowe oraz scenariusze przypadków użycia będą definiowane za pomocą poniższej tabeli.
+
+\begin{center}
+\begin{longtable}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+\textbf{ID:} & Unikalny identyfikator procesu z prefiksem ''PRB\_'' lub identyfikator przypadku użycia z prefiksem ''PUZ\_'' \\ \hline
+\textbf{Nazwa:} & Nazwa procesu biznesowego \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:} ID lub nazwy aktorów głównych biorących udział w procesie} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:} ID lub nazwy aktorów pomocniczych biorących udział w procesie} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Poziom:}  Biznesowy / Użytkownika / Podfunkcji} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Priorytet:}  Niski / Średni / Wysoki} \\
+\hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Opis:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Opis procesu biznesowego.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyzwalacze:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Wyszczególnienie zdarzeń wyzwalających proces.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki początkowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Warunki początkowe procesu.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Warunki końcowe procesu.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Scenariusz główny procesu.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Scenariusze alternatywne procesu.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyjątki:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Wyjątki procesu.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Dodatkowe wymagania:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Dodatkowe wymagania procesu.
+} \\
+\hline
+\end{longtable}
+\end{center}
+
+\textbf{TODO dalsze zasady}
+
+\subsection{Zakres produktu}
+Głównym celem projektu jest zbudowanie Systemu Wspomagającego Pracę Firmy Kurierskiej, który będzie miał na celu wsparcie całościowego cyklu życia przesyłki, od momentu nadania przez klienta do czasu dostarczenia jej do odbiorcy. 
+
+System pozwoli na ułatwienie procesu obsługi klienta głównie poprzez zagregowanie informacji o klientach oraz ich przystępną prezentację. Dodatkowo system będzie umożliwiał przeprowadzenie procesu windykacji należności.
+
+Będzie on również wspomagał pracę sortowni, gdzie głównym jego zadaniem będzie optymalizacja procesu dostarczenia paczek oraz ułatwienie rezerwacji transportu międzyregionalnego korzystającego z zewnętrznych pośredników.
+
+System skierowany jest także do klientów firmy, którym umożliwi pozyskiwanie informacji na temat firmy oraz procesu nadawania paczek, a także pozwoli na ich monitorowanie oraz nadawanie.
+
+%W zakres systemu będzie wchodzić aplikacja dla klientów umożliwiająca między innymi monitorowanie statusu wysłanych przez nich przesyłek, nadawanie ich oraz pozyskiwanie potrzebnych informacji o firmie i procesie dostarczania paczek.
+%
+%Kolejnym zadaniem SWPFK będzie wspomaganie obsługi sortowni, co pozwoli na:
+%\begin{itemize}
+%\item szeregowanie paczek do wysłania według ich priorytetu oraz miejsca dostarczenia,
+%\item rezerwowanie transportu u zewnętrznych pośredników komunikacyjnych obsługujących samoloty oraz pociągi,
+%\item rezerwację transportu we własnej flocie międzyregionalnej,
+%\item odpowiednie zaplanowanie i rozmieszczenie paczek w samochodach doręczających tak, aby zoptymalizować proces dostarczania.
+%\end{itemize}
+
+%System będzie również wspomagał obsługę klienta dostarczając zagregowanych informacji o kliencie wraz z pełną historią interakcji firmy z klientem. Będzie on także obsługiwał proces windykacji należności od klientów.
+
+%który obejmuje swym zakresem:
+%\begin{itemize}
+%\item Stworzenie aplikacji skierowanej do klientów firmy za pomocą, której %będą oni mogli 
+%\end{itemize}
+
+\subsection{Literatura}
+\label{subsec:Literatura}
+\begin{enumerate}
+\item Ustawa z dnia 29 sierpnia 1997 r. o ochronie danych osobowych (Dz.U. 1997 nr 133 poz. 883 z późniejszymi zmianami).
+\item Ustawa z dnia 23 listopada 2012 r. Prawo pocztowe (Dz.U. 2012 poz. 1529).
+\item Ustawa z dnia 15 listopada 1984 r. Prawo przewozowe (Dz.U. 1984 nr 53 poz. 272 z późniejszymi zmianami).
+\item IEEE Standard for Software User Documentation, IEEE Std 1063-2001, 2001.
+\end{enumerate}

@@ -1,0 +1,444 @@
+\section{Model procesów biznesowych}
+
+\subsection{Aktorzy i charakterystyka użytkowników}
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & AKT\_KLIENT \\ \hline
+Nazwa: & Klient \\ \hline
+Opis: & Klient to osoba sporadycznie korzystająca z usług Firmy Kurierskiej, np. poprzez jednorazowe nadanie przesyłki. Nie posiada stałego związku z firmą. Korzysta on z SWPFK za pomocą interfejsu internetowego, którego używa do pozyskania informacji o interesujących go usługach oraz za pośrednictwem pracownika POK. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & AKT\_KLIENT\_BIZ \\ \hline
+Nazwa: & Klient biznesowy \\ \hline
+Opis: & Klient biznesowy to osoba lub podmiot prawny posiadający podpisaną umowę z Firmą Kurierską na świadczenie usług przewozowych. Często i regularnie korzysta z usług firmy. Korzysta z interfejsu internetowego SWPFK, oraz posiada własne konto w SWPFK.  \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & AKT\_ODBIORCA \\ \hline
+Nazwa: & Odbiorca przesyłki \\ \hline
+Opis: & Odbiorca przesyłki to osoba do której klient firmy nadał przesyłkę. Przesyłka ta jest dostarczana do odbiorcy za pomocą kuriera. Korzysta on z SWPFK w celu sprawdzenia aktualnego statusu przesyłki. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & AKT\_PRAC\_PKT\_OBS\_KL \\ \hline
+Nazwa: & Pracownik punktu obsługi klienta \\ \hline
+Opis: & Pracownik punktu obsługi klienta jest pracownikiem Firmy Kurierskiej lub osobą która świadczy usługi w imieniu i na licencji Firmy Kurierskiej. Jego praca polega na przyjmowaniu oraz wydawaniu przesyłek w stacjonarnych POK rozmieszczonych poza siedzibą firmy. Dodatkowo jego zadaniem jest udzielanie informacji dotyczących usług firmy. Posiada indywidualne konto w SWPFK i ma do niego dostęp za pomocą aplikacji klienckiej. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & AKT\_PRAC\_SORT \\ \hline
+Nazwa: & Pracownik sortowni \\ \hline
+Opis: & Pracownik sortowni jest pracownikiem Firmy Kurierskiej w jednej z sortowni firmy. Jego zadanie polega na identyfikowaniu przesyłek oraz prowadzeniu załadunku pojazdów transportujących przesyłki do kolejnych sortowni lub do odbiorcy. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & AKT\_KURIER \\ \hline
+Nazwa: & Kurier \\ \hline
+Opis: & Kurier to pracownik Firmy Kurierskiej, który zajmuje się odbieraniem od oraz dostarczaniem przesyłek bezpośrednio do odbiorcy. Uzyskuje dostęp do SWPFK za pomocą terminalu mobilnego. Używa SWPFK w celu uzyskania informacji o danych adresowych odbiorcy przesyłki, wyliczenia najbardziej optymalnej trasy przejazdu podczas doręczenia oraz do identyfikacji przesyłek. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & AKT\_PRAC\_OBS\_KL \\ \hline
+Nazwa: & Pracownik obsługi klienta \\ \hline
+Opis: & Pracownik obsługi klienta to pracownik Firmy Kurierskiej. Obsługuje on klientów firmy, dostarczając im pomocy w rozwiązaniu problemów związanych z usługami firmy. Pomoc ta jest świadczona poprzez interfejs internetowy SWPFK oraz telefon. Zajmuje się on także sprawami związanymi z wystawianiem faktur za usługi oraz windykacją. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & AKT\_ZEWN\_FIR\_TRANSP \\ \hline
+Nazwa: & Zewnętrzna firma transportowa \\ \hline
+Opis: & Zewnętrzna firma transportowa to podmiot całkowicie odrębny od Firmy Kurierskiej. Świadczy ona usługi transportu towarów posiadanymi przez siebie środkami transportu (np. pociąg, samolot). SWPFK integruje się z jej systemem w celu umożliwienia użytkownikom zamówienia usług firmy z bezpośrednio poziomu interfejsu SWPFK. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Obiekty biznesowe}
+Poniżej zostały wyszczególnione najważniejsze obiekty biznesowe występujące w SWPFK.
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & OBB\_PRZESYLKA \\ \hline
+Nazwa: & Przesyłka \\ \hline
+Opis: & Obiekt przekazany przez klienta Firmie Kurierskiej w celu przetransportowania go do wskazanego odbiorcy. Przesyłka posiada unikalny w skali SWPFK identyfikator, który pozwala jednoznacznie ją zidentyfikować. Przesyłkę charakteryzuje jej waga, wymiary oraz priorytet dostarczenia. Priorytet przesyłki zależy od wskazanej zawartości lub jest określany bezpośrednio przez klienta. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & OBB\_KLIENT \\ \hline
+Nazwa: & Klient \\ \hline
+Opis: & Jest to tożsamość aktorów AKT\_KLIENT oraz AKT\_KLIENT\_BIZ pozwalająca na ich identyfikację w Firmie Kurierskiej. Obiekt Klient posiada unikalny w skali SWPFK identyfikator, który pozwala na powiązanie go z innymi obiektami w systemie. Obiekt zawiera również dowiązania do innych tożsamości tego klienta w odrębnych systemach działających w obrębie Firmy Kurierskiej. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & OBB\_AKTYWNOSC \\ \hline
+Nazwa: & Aktywność klienta \\ \hline
+Opis: & Jest to zapis interakcji pracownika Firmy Kurierskiej z klientem lub zlecenia/pracy realizowanej dla konkretnego klienta . Zawiera dane takie jak czas, miejsce i opis wydarzenia. Jeśli nie narusza to obowiązującego prawa aktywność posiada także pełny zapis przebiegu interakcji, np. kopie korespondencji.  \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & OBB\_FAKTURA \\ \hline
+Nazwa: & Faktura \\ \hline
+Opis: & Dokument zawierający szczegółowe zestawienie kosztów za usługi wykonane dla konkretnego klienta. Jest on ściśle powiązany z klientem i zawiera jego identyfikator. Klient na podstawie faktury jest zobowiązany do uregulowania należności wobec Firmy Kurierskiej we wskazanej kwocie oraz we wskazanym terminie. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & OBB\_UMOWA \\ \hline
+Nazwa: & Umowa \\ \hline
+Opis: & Dokument zawarty pomiędzy aktorem AKT\_KLIENT\_BIZ a Firmą Kurierską, który określa zasady współpracy tych dwóch podmiotów. Dotyczy ona ustalenia preferencyjnych warunków świadczenia usług klientowi np. w zamian za regularne korzystanie z usług firmy. Zawiera ona unikalny w skali systemu identyfikator oraz dowiązanie do obiektu klienta. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & OBB\_ZLECENIE \\ \hline
+Nazwa: & Zlecenie \\ \hline
+Opis: & Jest to zamówienie przez klienta wykonania usługi świdczonej przez Firmę Kurierską. Otrzymuje ono unikalny identyfikator i jest ściśle powiązane z konkretnym klientem firmy. Zawiera informacje o rodzaju usługi, czasie zamówienia i wykonania, miejscy zamówienia i wykonania oraz przydzielonych zasobach do realizacji usługi. Po zrealizowaniu usługi jej przebieg jest archiwizowany w postaci obiektu OBB\_AKTYWNOSC. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & OBB\_POJAZD \\ \hline
+Nazwa: & Pojazd transportowy \\ \hline
+Opis: & Jest to pojazd będący w posiadaniu Firmy Kurierskiej lub możliwy do wynajęcia od zewnętrznej firmy transportowej służący do transportu przesyłek pomiędzy sortowniami firmy oraz bezpośrednio do klienta. Posiada swój unikalny identyfikator oraz charakteryzują go takie dane jak: ładowność oraz wymiary części załadunkowej. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Procesy biznesowe}
+\begin{center}
+\begin{longtable}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+\textbf{ID:} & PRB\_ZAM\_ODB\_PRZESYLKI \\ \hline
+\textbf{Nazwa:} & Zamówienie odbioru przesyłki przez klienta \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:}  Klient biznesowy} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:}  \textit{Kurier}} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Poziom:}  Biznesowy} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Priorytet:}  Wysoki} \\
+\hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Opis:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Klient biznesowy zleca odbiór przesyłek przez kuriera.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyzwalacze:}} \\
+\multicolumn{2}{|p{15.1cm}|}{1. Klient biznesowy chce nadać przesyłki.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki początkowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+1. Klient biznesowy posiada ważna umowę z Firmą Kurierską na świadczenie usług. \newline
+2. Klient jest zalogowany w systemie.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Zlecenie odbioru zostaje utworzone oraz przydzielone kurierowi. Zostają wygenerowane nowe numery paczek w systemie.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\begin{enumerate}
+\item Klient biznesowy wprowadza do systemu dane: miejsce odbioru, proponowany czas odbioru, ilość przesyłek, przybliżoną wagę oraz wymiary każdej z przesyłek. \label{sce:wpr_dan}
+\item System sprawdza poprawność wprowadzonych danych.
+\item System wyznacza możliwy czas odbioru paczek na podstawie proponowanego czasu. \label{sce:wyzn_czas}
+\item Klient biznesowy zatwierdza datę odbioru zaproponowaną przez system.
+\item System zapisuje zlecenie odbioru i przydziela zlecenie odbioru odpowiedniemu kurierowi.
+\item System generuje unikalny numer dla każdej paczki i nadaje im status ''Nie odebrane od nadawcy''.
+\item Klient biznesowy oznacza paczki wygenerowanymi numerami.
+\end{enumerate}
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+2.a Wprowadzone dane są niepoprawne. \newline
+2.a.1 System prezentuje ostrzeżenie o niepoprawnych danych. \newline
+2.a.2 Powrót do punktu \ref{sce:wpr_dan} scenariusza głównego. \newline
+\newline
+4.a Wyznaczony przez system czas odbioru jest nieodpowiedni dla klienta biznesowego. \newline
+4.a.1 Klient biznesowy wprowadza inny proponowany czas odbioru przesyłki. \newline
+4.a.2 Powrót do punktu \ref{sce:wyzn_czas} scenariusza głównego.
+} 
+\\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyjątki:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\textit{brak}
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Dodatkowe wymagania:}} \\
+\multicolumn{2}{|p{15.1cm}|}{\textit{brak}
+} \\
+\hline
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+\textbf{ID:} & PRB\_ODBIOR\_PRZESYLEK \\ \hline
+\textbf{Nazwa:} & Odbiór przesyłek od klienta biznesowego przez kuriera \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:}  Klient biznesowy, Kurier} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:} \textit{brak}} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Poziom:}  Biznesowy} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Priorytet:}  Wysoki} \\
+\hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Opis:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Kurier odbiera przesyłki od klienta, który wcześniej zamówił odbiór.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyzwalacze:}} \\
+\multicolumn{2}{|p{15.1cm}|}{1. Nadeszła wyznaczona data odbioru przesyłek.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki początkowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Klient biznesowy złożył zlecenie odbioru paczek.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Paczki zostają przekazane kurierowi oraz ich status w systemie zmienia się na ''Odebrana od klienta''.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\begin{enumerate}
+\item Klient biznesowy wydaje przesyłki kurierowi. \label{sce:wyd_pacz}
+\item Kurier identyfikuje przekazywane przesyłki na podstawie znajdującego się na nich numeru.
+\item Kurier wprowadza przesyłki do systemu skanując ich kod za pomocą terminalu mobilnego.
+\item System zmienia status paczki na ''Odebrana od klienta''.
+\item Kurier generuje oraz podpisuje protokół odbioru przesyłek i przekazuje go klientowi.
+\end{enumerate}
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+2.a Przesyłki nie posiadają oznaczeń z numerem. \newline
+2.a.1 Kurier odmawia przyjęcia przesyłek. \newline
+2.a.2 Klient uzupełnia oznaczenia na przesyłkach. \newline
+2.a.3 Powrót do punktu \ref{sce:wyd_pacz} scenariusza głównego. \newline
+\newline
+3.a Numery przesyłek są niepoprawne lub nieaktualne. \newline
+3.a.1 Kurier odmawia przyjęcia przesyłek. \newline
+3.a.2 Proces kończy się.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyjątki:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Terminal mobilny kuriera jest uszkodzony lub nie ma połączenia z systemem.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Dodatkowe wymagania:}} \\
+\multicolumn{2}{|p{15.1cm}|}{\textit{brak}
+} \\
+\hline
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+\textbf{ID:} & PRB\_DOR\_PRZESYLEK \\ \hline
+\textbf{Nazwa:} & Doręczenie przesyłek do odbiorcy \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:}  Odbiorca, Kurier} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:}  \textit{brak}} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Poziom:}  Biznesowy} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Priorytet:}  Wysoki} \\
+\hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Opis:}} \\
+\multicolumn{2}{|p{15.1cm}|}{Kurier wydaje przesyłkę Odbiorcy.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyzwalacze:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+1. Przesyłka dotarła do sortowni najbliższej miejscu doręczenia.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki początkowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Kurier ustalił z Odbiorcą termin odbioru.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Przesyłka zostaje odebrana i jej status w systemie zostaje zmieniony na ''Doręczona''.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\begin{enumerate}
+\item Kurier identyfikuje przesyłki Odbiorcy za pomocą terminala mobilnego.
+\item Odbiorca sprawdza stan wydawanych przesyłek.
+\item Odbiorca potwierdza odbiór przesyłek składając podpis za pomocą terminala mobilnego.
+\item System zmienia status przesyłek na ''Doręczona''.
+\item Kurier przekazuje przesyłki Odbiorcy.
+\end{enumerate}
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+2.a Odbiorca ma zastrzeżenia do stanu paczek. \newline
+2.a.1 Kurier generuje protokół reklamacji w dwóch egzemplarzach. \newline
+2.a.2 Odbiorca uzupełnia protokół wprowadzając opis swoich zastrzeżeń. \newline
+2.a.3 Odbiorca oraz kurier potwierdzają podpisem zgodność protokołów. \newline
+2.a.4 Kurier przekazuje jeden egzemplarz protokołu Odbiorcy. \newline
+2.a.5 Proces kończy się.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyjątki:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Terminal mobilny kuriera jest uszkodzony.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Dodatkowe wymagania:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\textit{brak}
+} \\
+\hline
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+\textbf{ID:} & PRB\_UTW\_FAKTURY \\ \hline
+\textbf{Nazwa:} & Utworzenie faktury za usługi \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:} Klient biznesowy} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:} } \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Poziom:}  Biznesowy} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Priorytet:}  Wysoki} \\
+\hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Opis:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Klient biznesowy chce otrzymać fakturę za wykonane dla niego usługi.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyzwalacze:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+1. Prośba klienta o wystawienie faktury. \newline
+2. Upłynięcie czasu maksymalnego spłaty zaległych należności.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki początkowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Klient biznesowy jest zalogowany w systemie.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Klient biznesowy otrzymuje fakturę za usługi.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\begin{enumerate}
+\item Klient biznesowy wskazuje usługi za które chce otrzymać fakturę.
+\item System pobiera dane klienta. \label{sec:pobra_dan_kl}
+\item System generuje fakturę na podstawie wskazanych usługi pobranych danych klienta.
+\item Faktura jest udostępniana klientowi biznesowemu do pobrania.
+\end{enumerate}
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+1.a Klient posiada przedawnione nieopłacone usługi. \newline
+1.a.1 System dodaje te usługi do wskazanych przez klienta. \newline
+1.a.2 Powrót do punktu \ref{sec:pobra_dan_kl} scenariusza głównego.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyjątki:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\textit{brak}
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Dodatkowe wymagania:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\textit{brak}
+} \\
+\hline
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+\textbf{ID:} & PRB\_NAD\_PRZESYLKI\_POK \\ \hline
+\textbf{Nazwa:} & Nadanie przesyłki w POK \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:}  Klient, Pracownik punktu obsługi klienta} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:} \textit{brak}} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Poziom:}  Biznesowy} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Priorytet:}  Średni} \\
+\hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Opis:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Klient chce nadać przesyłkę w POK.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyzwalacze:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Przyjście klienta z przesyłką do POK.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki początkowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Pracownik POK jest zalogowany do systemu za pomocą aplikacji klienckiej.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Przesyłce zostaje nadany numer i zostaje ona przekazana pracownikowi POK.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\begin{enumerate}
+\item Klient podaje swoje dane adresowe oraz dane odbiorcy pracownikowi POK. \label{sce:kl_pod_dane_pok}
+\item System sprawdza poprawność podanych danych.
+\item Pracownik POK dokonuje pomiarów parametrów przesyłki.
+\item Pracownik POK wprowadza dane przesyłki do systemu.
+\item System nadaje przesyłce unikalny numer.
+\item Pracownik POK oznacza przesyłkę wygenerowanym numerem.
+\item Klient opłaca wybrany typ usługi.
+\item Pracownik POK generuje z systemu potwierdzenie nadania przesyłki oraz przekazuje je klientowi.
+\end{enumerate}
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+2.a Dane podane przez klienta są niepoprawne. \newline
+2.a.1 System informuje o niepoprawności danych. \newline
+2.a.2 Pracownik POK prosi Klienta o ponowne podanie danych. \newline
+2.a.3 Powrót do punktu \ref{sce:kl_pod_dane_pok} scenariusza głównego. \newline
+\newline
+3.a Wymiary przesyłki wykraczają poza maksymalne dozwolone wymiary. \newline
+3.a.1 Pracownik POK odmawia przyjęcia przesyłki. \newline
+3.a.2 Proces kończy się.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Wyjątki:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+Aplikacja kliencka nie ma połączenia z systemem.
+} \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Dodatkowe wymagania:}} \\
+\multicolumn{2}{|p{15.1cm}|}{
+\textit{brak}
+} \\
+\hline
+\end{longtable}
+\end{center}
+
+%\subsection{Reguły biznesowe}
