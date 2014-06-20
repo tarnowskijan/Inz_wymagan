@@ -52,21 +52,95 @@ Ze względu na posiadane licencje SWPFK powinien być zbudowany w oparciu o baz�
 Wykorzystanie posiadanych licencji pozwoli na obniżenie kosztów systemu oraz zaangażowanie dotychczas zdobytego doświadczenia w obsłudze baz danych Oracle.
 
 \subsubsection{Ograniczenia sprzętowe}
-%TODO
+\subsubsection*{Infrastruktura sieciowa}
+Moduł serwerowy SWPFK będzie uruchomiony w jednej fizycznej lokalizacji. Z tego względu wymaga się, aby serwerownia w której będzie uruchomiony moduł serwerowy SWPFK miała zapewnione co najmniej dwa redundantne połączenia światłowodowe do sieci Internet. Każde z tych połączeń powinno pochodzić od innego ISP oraz charakteryzować się przepustowością na poziomie co najmniej 10 Gb/s. Ponadto każde z połączeń musi zapewniać dostępność na poziomie minimum 99,999\% w~skali miesiąca.
+
+Ponadto połączenia sieciowe między dowolnymi dwoma elementami serwerowni powinny charakteryzować się przepustowością co najmniej 10 Gb/s.
+
+\subsubsection*{Konfiguracja sprzętowa serwera}
+Wymaga się aby moduł serwerowy SWPFK był w stanie obsłużyć jednocześnie  do 10000 równoległych sesji użytkowników korzystających z interfejsu internetowego oraz prowadzić obsługę innych aplikacji SWPFK spełniając wszystkie stawiane przed SWPFK wymagania wydajnościowe. 
+
+W celu spełnienia wymagań niezawodności SWPFK powinien być uruchomiony na dwóch niezależnych serwerach, z których jeden będzie pełnił funkcję zapasową i przejmie obsługę SWPFK tylko w sytuacji awarii głównej instancji.
+
+W poniższej tabeli znajduje się minimalna konfiguracja serwera obsługującego moduł serwerowy SWPFK.
+
+\begin{center}
+\begin{tabular}[h]{|p{3.5cm}|p{11.6cm}|}
+\hline
+Procesory: & 16 procesorów 12-wątkowych o częstotliwości taktowania zegara 2,5 GHz i 15 MB pamięci podręcznej, np. Intel E5-2630 v2 lub inny o nie niższej mocy obliczeniowej\\ \hline
+Pamięć RAM: & 512 GB \\ \hline
+Karta sieciowa: & Dwie karty sieciowe każda o przepustowości 10 Gb/s \\ \hline
+Pojemność dyskowa & Efektywnie 10 TB, dyski działające w macierzy typu RAID 5 \\ \hline
+System operacyjny: & SUSE Linux Enterprise Server 11 \\ \hline
+Dodatkowe oprogramowanie: & Java w wersji co najmniej 1.7 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Stacja robocza dla aplikacji klienckiej}
+Minimalne wymagania aplikacji klienckiej SWPFK do poprawnego działania na stacji roboczej przedstawia poniższa tabela.
+
+\begin{center}
+\begin{tabular}[h]{|p{3.5cm}|p{11.6cm}|}
+\hline
+Procesor: & Intel Core i3 1,8 GHz lub inny o zbliżonej mocy obliczeniowej \\ \hline
+Pamięć RAM: & 1,5 GB \\ \hline
+Karta sieciowa: & 100Mb/s \\ \hline
+Dostępna pojemność dysku: & 1,5 GB \\ \hline
+System operacyjny: & Windows Vista \\ \hline
+Dodatkowe oprogramowanie: & Microsoft .NET Framework 3.5 \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsubsection{Protokoły komunikacyjne}
-Komunikacja pomiędzy modułem serwerowym systemu a aplikacjami klienckimi oraz mobilnymi będzie się odbywać za pomocą kanału komunikacyjnego wspierającego szyfrowanie protokołem TLS w wersji co najmniej 1.1. Minimalna długość klucza służącego do zabezpieczenia połączenia musi wynosić 128 bitów.
-
-SWPFK będzie udostępniał interfejs internetowy który będzie używał do komunikacji protokołu HTTP w przypadku informacji publicznych oraz HTTPS w przypadku informacji poufnych.
+SWPFK powinien wykorzystywać w komunikacji jedynie otwarte protokoły komunikacyjne sieci Internet.
 
 \subsubsection{Instalacja oprogramowania}
-%TODO
+Aplikacja kliencka instalowana na komputerach PC nie powinna wymagać praw administratora aby zostać zainstalowana. Ponadto instalator aplikacji klienckiej powinien być dystrybuowany w postaci pojedynczego, niezależnego pliku. Plik ten po uruchomieniu powinien przeprowadzić użytkownika przez proces instalacji w formie czytelnego kreatora. Zakłada się, że do instalacji użytkownik nie będzie potrzebował żadnej specjalistycznej wiedzy z zakresu obsługi komputerów.
+
+Aplikacja mobilna będzie instalowana na terminalach mobilnych przez wyspecjalizowanych techników. Również moduł serwerowy będzie instalowany na serwerze przez osoby posiadające zaawansowaną wiedzę z zakresu utrzymywania i instalacji oprogramowania serwerowego.
 
 \subsubsection{Interfejsy programistyczne}
-SWPFK powinien posiadać elastyczny interfejs (API) pozwalający w przyszłości na łatwą integrację z systemami innych zewnętrznych firm transportowych.
+Wszystkie moduły SWPFK powinny implementować interfejsy programistyczne tak aby były one możliwe do osiągnięcia za pomocą technologii Java oraz .NET Framework bez ponoszenia kosztów implementacji własnych bibliotek obsługujących niestandardowe rozwiązanie.
 
 \subsection{Dokumentacja użytkownika}
-%TODO
+Dokumentacja SWPFK będzie się składać z:
+\begin{center}
+\begin{tabular}[h]{|p{2cm}|p{13.1cm}|}
+\hline
+Nazwa: & Dokumentacja techniczna SWPFK \\ \hline
+Opis: & Dokument będzie opisywał architekturę wszystkich modułów SWPFK, zastosowane technologie i rozwiązania oraz instrukcje instalacji i utrzymania każdego modułu. \\ \hline
+Standard: & IEEE 1063-2001 \\ \hline
+Format: & elektroniczny (w formie pliku PDF), drukowany \\ \hline
+Język: & angielski \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{2cm}|p{13.1cm}|}
+\hline
+Nazwa: & Przewodnik użytkownika aplikacji klienckiej \\ \hline
+Opis: & Dokument będzie zawierał szczegółowy opis wszystkich dostępnych  funkcjonalności aplikacji klienckiej. Będzie również zawierał opis każdego okna aplikacji. \\ \hline
+Standard: & IEEE 1063-2001 \\ \hline
+Format: & elektroniczny (w formie pliku PDF), drukowany \\ \hline
+Język: & polski, angielski, niemiecki, hiszpański, francuski, czeski, słowacki \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{2cm}|p{13.1cm}|}
+\hline
+Nazwa: & Przewodnik użytkownika aplikacji mobilnej \\ \hline
+Opis: & Dokument będzie zawierał szczegółowy opis wszystkich dostępnych  funkcjonalności aplikacji mobilnej oraz sposób ich użycia.  \\ \hline
+Standard: & IEEE 1063-2001 \\ \hline
+Format: & elektroniczny (w formie pliku PDF), drukowany \\ \hline
+Język: & polski, angielski, niemiecki, hiszpański, francuski, czeski, słowacki \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Założenia i zależności}
 Zakłada się, że użytkownik interfejsu internetowego SWPFK będzie korzystał z jednej z poniższych przeglądarek internetowych:

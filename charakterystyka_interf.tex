@@ -1,8 +1,9 @@
 \section{Charakterystyka interfejsów}
 
 \subsection{Interfejs użytkownika}
+Graficzny interfejs użytkownika każdego modułu SWPFK powinien być jak najbardziej przyjazny użytkownikowi. Kolorystyka interfejsów graficznych powinna być spójna z kolorystyką Firmy Kurierskiej, co oznacza użycie odcieni kolorów brązowego oraz złotego.
+
 \subsubsection{Wymagania interfejsu użytkownika}
-\paragraph*{Wielojęzyczność interfejsów}
 \begin{center}
 \begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
 \hline
@@ -23,10 +24,41 @@ Opis: & Ze względu na to, że Firma Kurierska prowadzi działalność w kilku k
 \end{tabular}
 \end{center}
 
-\subsection{Interfejsy zewnętrzne}
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & INT\_WYM\_2 \\ \hline
+Nazwa: & Ilość widoków obsługujących jedną funkcjonalność \\ \hline
+Priorytet: & Niski \\ \hline
+Opis: & Wymagane jest aby wykonanie dowolnej akcji w systemie (np. rejestrowanie paczki) nie wymagało od użytkownika korzystania z więcej niż dwóch różnych widoków lub formatek. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}[h]{|p{1.6cm}|p{13.5cm}|}
+\hline
+ID: & INT\_WYM\_3 \\ \hline
+Nazwa: & Obsługa skrótów klawiaturowych \\ \hline
+Priorytet: & Średni \\ \hline
+Opis: & W celu usprawnienia obsługi aplikacji klienckiej powinna ona umożliwiać dostęp do najczęściej używanych funkcjonalności za pomocą skrótów klawiaturowych. \\
+\hline
+\end{tabular}
+\end{center}
+
+%\subsection{Interfejsy zewnętrzne}
 
 \subsection{Interfejsy sprzętowe}
+Aplikacja kliencka SWPFK będzie wspierać czytniki kodów kreskowych podłączane do komputera PC poprzez port USB w wersji 2.0.
+
+W sortowniach aplikacja kliencka będzie komunikować się z automatycznymi czytnikami kodów kreskowych za pomocą interfejsu Ethernet. Systemy automatycznego pomiaru parametrów przesyłki będą komunikować się z aplikacją kliencką przez interfejs USB 2.0.
 
 \subsection{Interfejsy programistyczne}
+SWPFK powinien posiadać elastyczny interfejs (API) pozwalający w przyszłości na łatwą integrację z systemami innych zewnętrznych firm transportowych.
+
+Ponadto SWPFK będzie udostępniał interfejs w formie usługi SOAP, który pozwoli na portalom współpracującym z Firmą Kurierską sprawdzenie statusu przesyłki podając jej numer.
 
 \subsection{Interfejsy komunikacyjne}
+Komunikacja pomiędzy modułem serwerowym systemu a aplikacjami klienckimi oraz mobilnymi będzie się odbywać za pomocą kanału komunikacyjnego wspierającego szyfrowanie protokołem TLS w wersji co najmniej 1.1. Minimalna długość klucza służącego do zabezpieczenia połączenia musi wynosić 128 bitów.
+
+SWPFK będzie udostępniał interfejs internetowy który będzie używał do komunikacji protokołu HTTP w przypadku informacji publicznych oraz HTTPS w przypadku informacji poufnych.
