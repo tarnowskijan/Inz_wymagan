@@ -178,18 +178,18 @@ Opis: & Jest to pojazd będący w posiadaniu Firmy Kurierskiej lub możliwy do w
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
 \multicolumn{2}{|p{15.1cm}|}{
-Zlecenie odbioru zostaje utworzone oraz przydzielone kurierowi. Zostają wygenerowane nowe numery paczek w systemie.
+Zlecenie odbioru zostaje utworzone oraz przydzielone kurierowi. Zostają wygenerowane nowe numery przesyłek w systemie.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
 \multicolumn{2}{|p{15.1cm}|}{
 \begin{enumerate}
 \item Klient biznesowy wprowadza do systemu dane: miejsce odbioru, proponowany czas odbioru, ilość przesyłek, przybliżoną wagę oraz wymiary każdej z przesyłek. \label{sce:wpr_dan}
 \item System sprawdza poprawność wprowadzonych danych.
-\item System wyznacza możliwy czas odbioru paczek na podstawie proponowanego czasu. \label{sce:wyzn_czas}
+\item System wyznacza możliwy czas odbioru przesyłek na podstawie proponowanego czasu. \label{sce:wyzn_czas}
 \item Klient biznesowy zatwierdza datę odbioru zaproponowaną przez system.
 \item System zapisuje zlecenie odbioru i przydziela zlecenie odbioru odpowiedniemu kurierowi.
-\item System generuje unikalny numer dla każdej paczki i nadaje im status ''Nie odebrane od nadawcy''.
-\item Klient biznesowy oznacza paczki wygenerowanymi numerami.
+\item System generuje unikalny numer dla każdej przesyłki i nadaje im status ''Nie odebrane od nadawcy''.
+\item Klient biznesowy oznacza przesyłki wygenerowanymi numerami.
 \end{enumerate}
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
@@ -231,11 +231,11 @@ Zlecenie odbioru zostaje utworzone oraz przydzielone kurierowi. Zostają wygener
 \multicolumn{2}{|p{15.1cm}|}{1. Nadeszła wyznaczona data odbioru przesyłek.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki początkowe:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Klient biznesowy złożył zlecenie odbioru paczek.
+\multicolumn{2}{|p{15.1cm}|}{Klient biznesowy złożył zlecenie odbioru przesyłek.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
 \multicolumn{2}{|p{15.1cm}|}{
-Paczki zostają przekazane kurierowi oraz ich status w systemie zmienia się na ''Odebrana od klienta''.
+Przesyłki zostają przekazane kurierowi oraz ich status w systemie zmienia się na ''Odebrana od klienta''.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
 \multicolumn{2}{|p{15.1cm}|}{
@@ -243,7 +243,7 @@ Paczki zostają przekazane kurierowi oraz ich status w systemie zmienia się na 
 \item Klient biznesowy wydaje przesyłki kurierowi. \label{sce:wyd_pacz}
 \item Kurier identyfikuje przekazywane przesyłki na podstawie znajdującego się na nich numeru.
 \item Kurier wprowadza przesyłki do systemu skanując ich kod za pomocą terminalu mobilnego.
-\item System zmienia status paczki na ''Odebrana od klienta''.
+\item System zmienia status przesyłki na ''Odebrana od klienta''.
 \item Kurier generuje oraz podpisuje protokół odbioru przesyłek i przekazuje go klientowi.
 \end{enumerate}
 } \\ \hline
@@ -306,7 +306,7 @@ Przesyłka zostaje odebrana i jej status w systemie zostaje zmieniony na ''Dorę
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
 \multicolumn{2}{|p{15.1cm}|}{
-2.a Odbiorca ma zastrzeżenia do stanu paczek. \newline
+2.a Odbiorca ma zastrzeżenia do stanu przesyłek. \newline
 2.a.1 Kurier generuje protokół reklamacji w dwóch egzemplarzach. \newline
 2.a.2 Odbiorca uzupełnia protokół wprowadzając opis swoich zastrzeżeń. \newline
 2.a.3 Odbiorca oraz kurier potwierdzają podpisem zgodność protokołów. \newline

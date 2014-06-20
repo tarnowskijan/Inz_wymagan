@@ -52,40 +52,48 @@ Procesy biznesowe oraz scenariusze przypadków użycia będą definiowane za pom
 \begin{center}
 \begin{longtable}[h]{|p{1.6cm}|p{13.5cm}|}
 \hline
-\textbf{ID:} & Unikalny identyfikator procesu z prefiksem ''PRB\_'' lub identyfikator przypadku użycia z prefiksem ''PUZ\_'' \\ \hline
-\textbf{Nazwa:} & Nazwa procesu biznesowego \\ \hline
-\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:} ID lub nazwy aktorów głównych biorących udział w procesie} \\
-\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:} ID lub nazwy aktorów pomocniczych biorących udział w procesie} \\
+\textbf{ID:} & Unikalny identyfikator procesu z prefiksem ''PRB\_'' lub identyfikator przypadku użycia \\ \hline
+\textbf{Nazwa:} & Nazwa procesu biznesowego lub przypadku użycia \\ \hline
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:} ID lub nazwy aktorów głównych} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:} ID lub nazwy aktorów pomocniczych} \\
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Poziom:}  Biznesowy / Użytkownika / Podfunkcji} \\
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Priorytet:}  Niski / Średni / Wysoki} \\
 \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Opis:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Opis procesu biznesowego.
+\multicolumn{2}{|p{15.1cm}|}{Opis procesu biznesowego lub przypadku użycia.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Wyzwalacze:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Wyszczególnienie zdarzeń wyzwalających proces.
+\multicolumn{2}{|p{15.1cm}|}{Wyszczególnienie zdarzeń wyzwalających.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki początkowe:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Warunki początkowe procesu.
+\multicolumn{2}{|p{15.1cm}|}{Warunki początkowe.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Warunki końcowe procesu.
+\multicolumn{2}{|p{15.1cm}|}{Warunki końcowe.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Scenariusz główny procesu.
+\multicolumn{2}{|p{15.1cm}|}{Scenariusz główny.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Scenariusze alternatywne procesu.
+\multicolumn{2}{|p{15.1cm}|}{Scenariusze alternatywne.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Wyjątki:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Wyjątki procesu.
+\multicolumn{2}{|p{15.1cm}|}{Wyjątki.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Dodatkowe wymagania:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Dodatkowe wymagania procesu.
+\multicolumn{2}{|p{15.1cm}|}{Dodatkowe wymagania.
 } \\
 \hline
 \end{longtable}
 \end{center}
+
+\paragraph*{Oznaczenie ciągów alternatywnych}
+Jeżeli proces lub scenariusz użycia posiada ciąg alternatywny to oznaczenia ciągu alternatywnego odnoszącego się do punktu N (gdzie N to numer porządkowy punktu) scenariusza głównego będą definiowane następująco: \newline
+\textbf{N.a} Opis przyczyny wystąpienia scenariusza alternatywnego. \newline
+\textbf{N.a.1} Pierwszy krok scenariusza alternatywnego. \newline
+\textbf{N.a.2} Drugi krok scenariusza alternatywnego \newline
+\textbf{N.b} Opis przyczyny kolejnego scenariusza alternatywnego. \newline
+\textbf{N.b.1} Pierwszy krok kolejnego scenariusza alternatywnego.
 
 \subsubsection*{Definiowanie spraw otwartych}
 Sprawy otwarte będą definiowane z wykorzystaniem poniższej tabeli.
@@ -105,9 +113,9 @@ Głównym celem projektu jest zbudowanie Systemu Wspomagającego Pracę Firmy Ku
 
 System pozwoli na ułatwienie procesu obsługi klienta głównie poprzez zagregowanie informacji o klientach oraz ich przystępną prezentację. Dodatkowo system będzie umożliwiał przeprowadzenie procesu windykacji należności.
 
-Będzie on również wspomagał pracę sortowni, gdzie głównym jego zadaniem będzie optymalizacja procesu dostarczenia paczek oraz ułatwienie rezerwacji transportu międzyregionalnego korzystającego z zewnętrznych pośredników.
+Będzie on również wspomagał pracę sortowni, gdzie głównym jego zadaniem będzie optymalizacja procesu dostarczenia przesyłek oraz ułatwienie rezerwacji transportu międzyregionalnego korzystającego z zewnętrznych pośredników.
 
-System skierowany jest także do klientów firmy, którym umożliwi pozyskiwanie informacji na temat firmy oraz procesu nadawania paczek, a także pozwoli na ich monitorowanie oraz nadawanie.
+System skierowany jest także do klientów firmy, którym umożliwi pozyskiwanie informacji na temat firmy oraz procesu nadawania przesyłek, a także pozwoli na ich monitorowanie oraz nadawanie.
 
 %W zakres systemu będzie wchodzić aplikacja dla klientów umożliwiająca między innymi monitorowanie statusu wysłanych przez nich przesyłek, nadawanie ich oraz pozyskiwanie potrzebnych informacji o firmie i procesie dostarczania paczek.
 %
