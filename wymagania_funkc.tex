@@ -625,34 +625,61 @@ Aktor zostaje zalogowany oraz zostaje utworzona nowa sesja w systemie.
 \hline
 \textbf{ID:} & UC.MI.4 \\ \hline
 \textbf{Nazwa:} & Obsłuż reklamację \\ \hline
-\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:} ID lub nazwy aktorów głównych biorących udział w procesie} \\
-\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:} ID lub nazwy aktorów pomocniczych biorących udział w procesie} \\
-\multicolumn{2}{|p{15.1cm}|}{\textbf{Poziom:}  Biznesowy / Użytkownika / Podfunkcji} \\
-\multicolumn{2}{|p{15.1cm}|}{\textbf{Priorytet:}  Niski / Średni / Wysoki} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy główni:} Pracownik obsługi klienta} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Aktorzy pomocniczy:} 
+\textit{brak}} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Poziom:} Użytkownika} \\
+\multicolumn{2}{|p{15.1cm}|}{\textbf{Priorytet:} Średni} \\
 \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Opis:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Opis procesu biznesowego.
+\multicolumn{2}{|p{15.1cm}|}{
+Pracownik obsługi klienta chce odpowiedzieć na reklamacje złożoną przez klienta.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Wyzwalacze:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Wyszczególnienie zdarzeń wyzwalających proces.
+\multicolumn{2}{|p{15.1cm}|}{
+Klient złożył reklamację.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki początkowe:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Warunki początkowe procesu.
+\multicolumn{2}{|p{15.1cm}|}{
+Aktor jest zalogowany w aplikacji klienckiej.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Warunki końcowe:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Warunki końcowe procesu.
+\multicolumn{2}{|p{15.1cm}|}{
+Odpowiedź na reklamację zostaje zarejestrowana w systemie i jest dostępna dla klienta.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusz główny:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Scenariusz główny procesu.
+\multicolumn{2}{|p{15.1cm}|}{
+\begin{enumerate}
+\item Aktor wybiera opcje ''Reklamacje'' w aplikacji klienckiej.
+\item System prezentuje listę aktualnych reklamacji w systemie.
+\item Aktor wskazuje opcję ''Odpowiedz na reklamację'' obok wybranej reklamacji.
+\item System prezentuje formularz do wprowadzenia odpowiedzi.
+\item Aktor wprowadza odpowiedź na reklamację.
+\item Aktor wybiera opcję ''Dodaj załącznik''.
+\item System prezentuje okno wyboru pliku z dysku lokalnego komputera PC.
+\item Aktor wybiera plik, który chce załączyć.
+\item Aktor wybiera opcję ''Prześlij odpowiedź''.
+\item System zapisuje przesłaną odpowiedź i udostępnia ją klientowi.
+\end{enumerate}
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Scenariusze alternatywne procesu.
+\multicolumn{2}{|p{15.1cm}|}{
+9.a Wybrany plik przekracza maksymalny dopuszczalny rozmiar. \newline
+9.a.1 System prezentuje informacje o przekroczonym rozmiarze oraz okno wyboru z możliwością kontynuowania bez przesłania pliku. \newline
+9.a.2 Aktor wybiera opcję kontynuacji. \newline
+9.a.3 Powrót do punktu 10 scenariusza głównego.\newline
+\newline
+9.a.2.a Klient wybiera opcję powrotu do formularza. \newline
+9.a.2.a.1 Klient wybiera poprawny plik z dysku. \newline
+9.a.2.a.2 Powrót do punktu 10 scenariusza głównego.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Wyjątki:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Wyjątki procesu.
+\multicolumn{2}{|p{15.1cm}|}{
+Aplikacja kliencka nie ma połączenia z modułem serwerowym.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Dodatkowe wymagania:}} \\
-\multicolumn{2}{|p{15.1cm}|}{Dodatkowe wymagania procesu.
+\multicolumn{2}{|p{15.1cm}|}{
+\textit{brak}
 } \\
 \hline
 \end{longtable}
@@ -748,6 +775,7 @@ Przesyłka zostaje zarejestrowana w systemie i zostaje jej nadany numer.
 \item Aktor wprowadza dane nadawcy oraz odbiorcy.
 \item Aktor wprowadza parametry przesyłki, takie jak wymiary i waga.
 \item Aplikacja kliencka przesyła do modułu serwerowego żądanie zarejestrowania przesyłki.
+\item Moduł serwerowy weryfikuje podane dane.
 \item Moduł serwerowy nadaje przesyłce unikalny numer oraz rejestruje ją w systemie.
 \item Moduł serwerowy przesyła potwierdzenie zarejestrowania przesyłki.
 \item Aplikacja kliencka prezentuje potwierdzenie zarejestrowania.
@@ -757,7 +785,11 @@ Przesyłka zostaje zarejestrowana w systemie i zostaje jej nadany numer.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Scenariusze alternatywne i rozszerzenia:}} \\
 \multicolumn{2}{|p{15.1cm}|}{
-
+6.a Przesłane dane są niepoprawne. \newline
+6.a.1 Moduł serwerowy przesyła informacje o niepoprawnych danych. \newline
+6.a.2 Aplikacja kliencka prezentuje informacje o niepowodzeniu. \newline
+6.a.3 Aktor poprawia wprowadzone dane. \newline
+6.a.4 Powrót do punktu 5 scenariusza głównego.
 } \\ \hline
 \multicolumn{2}{|p{15.1cm}|}{\textbf{Wyjątki:}} \\
 \multicolumn{2}{|p{15.1cm}|}{
